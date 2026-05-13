@@ -1,0 +1,10 @@
+[templates.foot]
+input_path = "~/.config/noctalia/templates/foot-colors.ini"
+output_path = "~/.cache/noctalia/foot-colors.ini"
+post_hook = "pkill -SIGUSR1 foot || true"
+
+[templates.neovim]
+input_path = "~/.config/noctalia/templates/neovim-matugen.lua"
+output_path = "~/.local/share/nvim/site/lua/matugen.lua"
+post_hook = "pkill -SIGUSR1 nvim || true"
+

@@ -1,0 +1,4 @@
+map <a-j> nextTab
+map <a-k> previousTab
+map <a-s-j> moveTabRight
+map <a-s-k> moveTabLeft
