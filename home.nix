@@ -6,11 +6,12 @@
 
   home.packages = with pkgs; [
     chafa         # image viewer for yazi
+    clang
+    cmake
     claude-code
     cowsay
     delve         # go debugger
     fzf
-    gcc
     gh
     gnumake
     go
@@ -90,6 +91,8 @@
     sansSerif = [ "Comic Mono" ];
     serif = [ "Comic Mono" ];
   };
+
+  home.file.".claude/CLAUDE.md".source = ./claude.md;
 
   imports = [
     ./stuff
