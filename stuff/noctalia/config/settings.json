@@ -178,7 +178,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Vomit",
+        "predefinedScheme": "Oasis Abyss",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": true
@@ -392,7 +392,7 @@
         "weatherTaliaMascotAlways": false
     },
     "network": {
-        "bluetoothAutoConnect": true,
+        "bluetoothAutoConnect": false,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 60000,

@@ -49,11 +49,11 @@
 
   # Enable sound.
   # services.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -61,9 +61,15 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.fred = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "uinput" ];
     shell = pkgs.zsh;
   };
+
+  users.groups.uinput = {};
+
+  services.udev.extraRules = ''
+    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+  '';
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -77,12 +83,21 @@
     xwayland-satellite
   ];
 
+  programs.ccache.enable = true;
   programs.niri.enable = true;
   programs.zsh.enable = true;
 
   virtualisation.docker.enable = true;
 
+  networking.firewall.enable = true;
+
+  programs.weylus.enable = true;
+  programs.weylus.openFirewall = true;
+
   services.upower.enable = true;
+
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   hardware.graphics = {
     enable = true;

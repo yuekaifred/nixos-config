@@ -18,24 +18,25 @@ local colors = {
 	text = "{{colors.on_surface.default.hex}}",
 
 	-- Syntax Highlights
-	rosewater = "{{colors.primary.default.hex}}",
-	flamingo = "{{colors.tertiary.default.hex}}",
-	pink = "{{colors.tertiary.default.hex}}",
+	rosewater = "{{colors.on_primary_container.default.hex}}",
+	flamingo = "{{colors.on_tertiary_container.default.hex}}",
+	pink = "{{colors.on_tertiary_container.default.hex}}",
 	mauve = "{{colors.tertiary.default.hex}}",
 	red = "{{colors.error.default.hex}}",
-	maroon = "{{colors.error.default.hex}}",
+	maroon = "{{colors.on_error_container.default.hex}}",
 	peach = "{{colors.secondary.default.hex}}",
-	yellow = "{{colors.secondary.default.hex}}",
+	yellow = "{{colors.on_secondary_container.default.hex}}",
 	green = "{{colors.primary.default.hex}}",
-	teal = "{{colors.secondary.default.hex}}",
-	sky = "{{colors.primary.default.hex}}",
-	sapphire = "{{colors.secondary.default.hex}}",
+	teal = "{{colors.on_primary_container.default.hex}}",
+	sky = "{{colors.secondary.default.hex}}",
+	sapphire = "{{colors.on_secondary_container.default.hex}}",
 	blue = "{{colors.primary.default.hex}}",
-	lavender = "{{colors.tertiary.default.hex}}",
+	lavender = "{{colors.on_tertiary_container.default.hex}}",
 }
 
 local M = {}
 function M.setup()
+<* if {{ mode | replace: "light", "" }} *>
 	require("catppuccin").setup({
 		flavor = "mocha",
 		color_overrides = {
@@ -43,5 +44,14 @@ function M.setup()
 		},
 	})
 	vim.cmd.colorscheme("catppuccin-mocha")
+<* else *>
+	require("catppuccin").setup({
+		flavor = "latte",
+		color_overrides = {
+			latte = colors,
+		},
+	})
+	vim.cmd.colorscheme("catppuccin-latte")
+<* endif *>
 end
 return M

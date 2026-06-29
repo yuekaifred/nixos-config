@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "fred";
@@ -27,16 +27,21 @@
       ];
     })
     grim        # ss tool
+    krita
     nodejs
     python3
     slurp       # region selector; pairs with grim for ss
     unzip
+    mpv
     noctalia-shell
+    weylus
+    obs-studio
     yazi
     wget        # http downloader
     typst
     wl-clipboard
     zathura
+    inputs.herdr.packages.${pkgs.system}.default
   ];
 
   programs.foot = {
@@ -59,7 +64,7 @@
 
   programs.git = {
     enable = true;
-    settings.user.name = "fyang151";
+    settings.user.name = "yuekaifred";
     settings.user.email = "fyang151@gmail.com";
   };
   programs.ssh = {
@@ -92,7 +97,8 @@
     serif = [ "Comic Mono" ];
   };
 
-  home.file.".claude/CLAUDE.md".source = ./claude.md;
+  home.file.".claude/CLAUDE.md".source = ./misc/claude.md;
+  home.file.".claude/skills/herdr/SKILL.md".source = "${inputs.herdr}/SKILL.md";
 
   imports = [
     ./stuff

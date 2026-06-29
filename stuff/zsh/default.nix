@@ -21,6 +21,7 @@
       prompt pure
       bindkey -M viins '^?' backward-delete-char
       export EDITOR=nvim
+      alias webcam='mpv av://v4l2:/dev/video3 --demuxer-lavf-o=video_size=1920x1080,framerate=60'
 
       function claude() {
         local scheme

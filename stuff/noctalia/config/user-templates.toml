@@ -1,7 +1,7 @@
 [templates.foot]
 input_path = "~/.config/noctalia/templates/foot-colors.ini"
 output_path = "~/.cache/noctalia/foot-colors.ini"
-post_hook = "pkill -SIGUSR1 foot || true"
+post_hook = "~/.config/noctalia/scripts/foot-live-colors.sh"
 
 [templates.neovim]
 input_path = "~/.config/noctalia/templates/neovim-matugen.lua"

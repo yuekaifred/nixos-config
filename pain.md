@@ -25,10 +25,12 @@ i dont wanna launch it from tty everytime
 what da hell is niri vs niri-session?
 want background on overlay
 dynamic monitor layout
+do herdr but with niri panes hmmm
 
 NOCTALIA
 i wanna destroy it
 theming and wallpaper select is kinda clunky. hmm also wanna switch font
+wanna use my love bluloco, i can prob make a script for that actually
 
 NVIM
 dont want it to jiggle back and forth when error
@@ -38,6 +40,7 @@ renaming that look like substitute
 allow for "peeking", which doesnt persist buffer of file after opening with oil
 conform format dont work
 tab switching
+why space delete weird
 
 ZSH
 i want history to use history for just that niri window, not for all zsh.

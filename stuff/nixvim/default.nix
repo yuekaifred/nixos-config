@@ -21,6 +21,7 @@
       number = true;
       showmode = false;
       laststatus = 0;
+      ruler = false;
       wrap = true;
       breakindent = true;
       linebreak = true;

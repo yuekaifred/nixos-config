@@ -70,18 +70,20 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "HDMI-A-2" {
+output "DP-4" {
     mode "2560x1440@59.951"
     scale 1.25
-    position x=0 y=0
+    position x=2048 y=0
 }
 
-output "DP-2" {
-  scale 1.25
+output "DP-3" {
+    mode "2560x1440@59.951"
+    scale 1.25
+    position x=2048 y=0
 }
 
 output "eDP-1" {
-    position x=2048 y=0
+    position x=0 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -105,11 +107,17 @@ layout {
         proportion 0.33333
         proportion 0.5
         proportion 0.66667
+        proportion 1.0
         // Fixed sets the width in logical pixels exactly.
         // fixed 1920
     }
     // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
-    // preset-window-heights { }
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
     // You can change the default width of the new windows.
     default-column-width {
         proportion 0.5
@@ -256,12 +264,19 @@ animations {
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 window-rule {
     opacity 0.8
+    // opacity 1.0
+    // opacity 0.2
     geometry-corner-radius 0
     clip-to-geometry true
     background-effect {
         blur true
     }
 }
+window-rule {
+    match app-id="google-chrome"
+    draw-border-with-background false
+}
+
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {

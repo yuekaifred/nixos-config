@@ -7,6 +7,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    herdr.url = "github:ogulcancelik/herdr/v0.6.8";
+    herdr.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
